@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.etty.locationsapp.MainActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchValueEditText"
+            android:layout_weight="0.14"
+            android:textSize="@dimen/abc_text_size_large_material" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search near me"
+            android:id="@+id/useMyLocationCheckBox"
+            android:checked="false"
+            android:textSize="@dimen/abc_text_size_large_material" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Go"
+            android:id="@+id/goButton"
+            android:textSize="@dimen/abc_text_size_large_material" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout">
+        <fragment
+            android:layout_width="302dp"
+            android:layout_height="match_parent"
+            android:name="com.example.etty.locationsapp.ListFragment"
+            android:id="@+id/fragment"
+            android:layout_gravity="top" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/map_fragmant"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout">
+
+        <fragment
+            android:layout_width="297dp"
+            android:layout_height="match_parent"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:id="@+id/mymap"
+            android:layout_gravity="end|top" />
+    </FrameLayout>
+
+</RelativeLayout>
